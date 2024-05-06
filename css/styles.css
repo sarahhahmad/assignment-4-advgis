@@ -1,0 +1,89 @@
+html,
+head,
+body,
+#main-container {
+    height: 100%;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #371043;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #edeaee;
+}
+
+#main-container {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    font-size: 24px;
+}
+
+nav {
+    padding: .5rem;
+    border-bottom: .5px solid #8856a7;
+    display: flex;
+}
+
+.nav-links {
+    flex-grow: 1;
+    justify-content: end;
+    display: flex;
+}
+
+.nav-link {
+    display: inline-block;
+    font-size: .9rem;
+}
+
+#content-container {
+    flex-grow: 1;
+    display: flex;
+    min-height: 0;
+}
+
+#sidebar {
+    width: 348px;
+    padding: 1rem;
+    font-size: 0.9rem;
+    overflow-y: scroll;
+    box-sizing: border-box;
+}
+
+#map {
+    height: 100%;
+    flex-grow: 1;
+}
+
+.title {
+    font-weight: 500;
+}
+
+@media only screen and (max-width: 800px) {
+    #content-container {
+        flex-direction: column-reverse;
+    }
+
+    #map {
+        height: 60%;
+        flex-shrink: 0;
+    }
+
+    #sidebar {
+        width: 100%;
+    }
+}
+
+.mapboxgl-popup-content {
+    width: 250px;
+    /* Adjust width as needed */
+    max-height: 800px;
+    /* Adjust max height as needed */
+    overflow-y: auto;
+    /* Add scroll bar if content exceeds max height */
+    background-color:#e1e5ec;
+    font-size: 14px;
+}
+
