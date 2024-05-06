@@ -3,7 +3,8 @@ This repository contains the HTML, Javascript, CSS, and relevant data for this i
 
 This map is based on the data and static maps from [Apur: L'atelier parisien d'urbanisme (Paris Urban Agency)](https://www.apur.org/fr), specifically the [Map of social housing in Paris - Situation on 1st January 2019](https://www.apur.org/en/our-works/map-social-housing-paris-situation-1st-january-2019)
 
-Future updates will:
+Future updates will:  
+
 -Improve upon the map's style, including functionality of pop-ups
 -Include layers that include the building footprints of the social housing stock so that users can zoom in and see the distribution of social housing within arrondissements or at a more local scale.
 -Inlcude layers that identify the arrondissements that have lower concentrations of social housing to identify as target neighborhoods for future social housing construction.
