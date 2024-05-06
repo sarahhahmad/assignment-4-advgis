@@ -7,13 +7,13 @@ body,
     font-family: Arial, Helvetica, sans-serif;
     color: #371043;
 }
-
+/** this is the styling for the entire page**/
 body {
     margin: 0;
     padding: 0;
     background-color: #edeaee;
 }
-
+/** this is the styling for the title container**/
 #main-container {
     display: flex;
     flex-direction: column;
@@ -37,6 +37,8 @@ nav {
     display: inline-block;
     font-size: .9rem;
 }
+
+/** this is the styling for the side panel**/
 
 #content-container {
     flex-grow: 1;
@@ -76,6 +78,7 @@ nav {
     }
 }
 
+/** this is the styling for the pop-up **/
 .mapboxgl-popup-content {
     width: 250px;
     /* Adjust width as needed */

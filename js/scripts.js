@@ -45,7 +45,7 @@ map.on('load', () => {
     }, 'path-pedestrian-label');
 
 
-    // add a line layer using the PLUTO data
+    // add a line layer using the arrondissement boundaries
     map.addLayer({
         'id': 'paris-districts-line',
         'type': 'line',
@@ -57,7 +57,7 @@ map.on('load', () => {
         }
     }, 'path-pedestrian-label');
 
-    // add a line layer for highlighting clicked feature
+    // add a line layer for highlighting clicked arrondissement
     map.addLayer({
         id: 'highlight-line',
         type: 'line',
@@ -78,13 +78,14 @@ map.on('load', () => {
 
 });
 
-// Function to highlight clicked feature
+// Function to highlight clicked arrondissement
 function highlightFeature(feature) {
     map.setFilter('highlight-line', ['==', 'name3', feature.properties.name3]);
 }
 
 
-// Function to show popup with information
+// Function to show popup with information about social housing percentages and inventory
+//since geojson was originally from a shapefile, I wanted to make sure that the pop up was showing up in the center of each arrondissement instead of snapping to the polygon line. so I asked ChatGPT for some help and it had me download a program that can calculate the center of each polygon (arrondissement) 
 function showPopup(feature) {
     var centroid = turf.centroid(feature).geometry.coordinates; // Calculate centroid using turf.js
     var description = '<h3>' + feature.properties.name3 + ' | <br>' + feature.properties.neighborhoodname + '</h3>' +
