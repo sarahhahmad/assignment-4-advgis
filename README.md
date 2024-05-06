@@ -1,4 +1,4 @@
-This repository had HTML, Javascript, CSS, and relevant data for this interactive webmap which shows the distribution of the social housing stock in the arrondissements of Paris. 
+This repository contains the HTML, Javascript, CSS, and relevant data for this interactive webmap which shows the distribution of the social housing stock in the arrondissements of Paris. 
 
 This map is based on the data and static maps from [Apur: L'atelier parisien d'urbanisme (Paris Urban Agency)](https://www.apur.org/fr), specifically the [Map of social housing in Paris - Situation on 1st January 2019](https://www.apur.org/en/our-works/map-social-housing-paris-situation-1st-january-2019)
 
