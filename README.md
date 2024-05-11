@@ -12,4 +12,3 @@ Future updates will:
 * Include layers that have the [Quartiers prioritaires de la politique de la ville 2024-2030](https://www.apur.org/sites/default/files/documents/cartefichiers-attaches/carte_qpv_grand_paris.pdf?token=gjJIUYAY), or the Priority Urban Neighborhoods for 2024-2030. These neighborhoods are identified as facing socioeconomic challenges such as socio-spatial segregation, for example.
 
 
-

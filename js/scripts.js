@@ -21,6 +21,24 @@ map.on('load', () => {
         "data": "data/paris-districts.geojson",
     })
 
+    // add a geojson source for Areas identified as Social Housing Deficit Zones (PLU)
+    map.addSource('deficit', {
+        "type": "geojson",
+        "data": "data/deficit.geojson",
+    })
+
+    //add geosjon source for social housing unit locations
+    map.addSource('housing-units', {
+        'type': 'geojson',
+        'data': 'data/housing-units.geojson'
+    })
+
+
+map.addLayer({
+    id: 'housing-units-fill',
+    type: 'point',
+    source: 'housing-units'
+}, 'path-pedestrian-label');
 
     //add a fill layer, each arrondissement getting a color based on the percentage of the city's social housing units it has 
     map.addLayer({
@@ -39,7 +57,7 @@ map.on('load', () => {
                 'over25', '#810f7c',
                 '#ccc'
             ],
-            'fill-opacity': .85
+            'fill-opacity': .6
 
         }
     }, 'path-pedestrian-label');
@@ -69,6 +87,30 @@ map.on('load', () => {
         filter: ['==', 'name3', ''] // Initially hide the line layer
     });
 
+     //visualize deficit zones
+
+  map.addLayer({
+    id: 'deficit-fill',
+    type: 'fill',
+    source: 'deficit',
+    minizoom: 5,
+    paint: {
+        'fill-color': '#FFBDAE',
+        'fill-opacity': 1
+    }
+}, 'path-pedestrian-label');
+
+  map.addLayer({
+    id: 'deficit-line',
+    type: 'line',
+    source: 'deficit',
+    paint: {
+        'line-color': 'black',
+        'line-width': 1
+    }
+    }, 'path-pedestrian-label');
+
+    
     // Event listener for click on arrondissements
     map.on('click', 'paris-districts-fill', function (e) {
         var clickedFeature = e.features[0];
@@ -94,12 +136,12 @@ function showPopup(feature) {
 
     // Ensure that the popup is not already open
     if (!map.getLayer('popup')) {
-        new mapboxgl.Popup({ closeOnClick: true })
+    var popup = new mapboxgl.Popup({ closeOnClick: true })
             .setLngLat(centroid) // Set the centroid as the popup location
             .setHTML(description)
             .addTo(map);
-    }
 }
+
 
 // Change the cursor to a pointer when
 // the mouse is over the states layer.
@@ -112,3 +154,4 @@ map.on('mouseenter', 'paris-districts-fill', () => {
 map.on('mouseleave', 'paris-districts-fill', () => {
     map.getCanvas().style.cursor = '';
 });
+}
